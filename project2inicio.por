@@ -1,88 +1,93 @@
 /*1. Cadastrar um Kart
-2. Listar Karts disponÌveis
+2. Listar Karts dispon√≠veis
 3. Listar Karts locados
 4. Alugar um Kart
 5. Devolver um Kart
 6. Kart que mais gerou ganhos
 7. Receita e lucro do dia, considerando karts locados
-8. LocaÁ„o de circuito
+8. Loca√ß√£o de circuito
 9. Atualizar dia
 10. Sair do programa*/
-/*A opÁ„o cadastrar kart deve armazenar os dados de modelo, valor de locaÁ„o,
-quantidade de vezes que foi locado, se est· ou n„o locado. O m·ximo de karts
-cadastrados simultaneamente deve ser 15. Inicialmente, nenhum kart est· cadastrado.*/
-/*A opÁ„o Listar karts disponÌveis deve mostrar na tela as informaÁıes completas sobre
+/*A op√ß√£o cadastrar kart deve armazenar os dados de modelo, valor de loca√ß√£o,
+quantidade de vezes que foi locado, se est√° ou n√£o locado. O m√°ximo de karts
+cadastrados simultaneamente deve ser 15. Inicialmente, nenhum kart est√° cadastrado.*/
+/*A op√ß√£o Listar karts dispon√≠veis deve mostrar na tela as informa√ß√µes completas sobre
 todos os karts cadastrados. Dados em branco devem ser ignorados.
-*A opÁ„o listar karts locados deve listar apenas os nomes dos filmes que j· est„o
+*A op√ß√£o listar karts locados deve listar apenas os nomes dos filmes que j√° est√£o
 locados por algum cliente qualquer.
-*A opÁ„o Alugar um kart deve possibilitar ao usu·rio escolher dentre a lista de karts
-disponÌveis e marcar como locado, o valor de receita di·ria e lucro devem ser
+*A op√ß√£o Alugar um kart deve possibilitar ao usu√°rio escolher dentre a lista de karts
+dispon√≠veis e marcar como locado, o valor de receita di√°ria e lucro devem ser
 armazenados para a outra funcionalidade.*/
-/*A opÁ„o devolver um kart deve possibilitar ao usu·rio escolher dentre a lista de karts
-locados e marcar como disponÌvel.
-A opÁ„o kart que mais gerou ganhos deve imprimir todas as informaÁıes sobre o kart
-mais locado durante a execuÁ„o do programa.
-A opÁ„o ìReceita e lucro do dia, considerando karts locadosî deve mostrar na tela o
-total de receita que ser· gerado naquele dia caso os karts locados permaneÁam nesse
-status. Alterar um kart para locado ou devolvido impactar· nesse resultado.
-Considere que o lucro È 30% da receita gerada por um kart.
-LocaÁ„o de circuito ñ O valor de locaÁ„o do circuito deve previamente ser cadastrado.
-Caso o circuito seja locado, haver· o acrÈscimo de 70% do valor de sua locaÁ„o ‡
-receita di·ria.
-A opÁ„o atualizar dia deve reiniciar os dados para pista, colocando-a como n„o locada,
-bem como emitir um aviso de quais karts dever„o ser cobrados novo aluguel, esses
+/*A op√ß√£o devolver um kart deve possibilitar ao usu√°rio escolher dentre a lista de karts
+locados e marcar como dispon√≠vel.
+A op√ß√£o kart que mais gerou ganhos deve imprimir todas as informa√ß√µes sobre o kart
+mais locado durante a execu√ß√£o do programa.
+A op√ß√£o ‚ÄúReceita e lucro do dia, considerando karts locados‚Äù deve mostrar na tela o
+total de receita que ser√° gerado naquele dia caso os karts locados permane√ßam nesse
+status. Alterar um kart para locado ou devolvido impactar√° nesse resultado.
+Considere que o lucro √© 30% da receita gerada por um kart.
+Loca√ß√£o de circuito ‚Äì O valor de loca√ß√£o do circuito deve previamente ser cadastrado.
+Caso o circuito seja locado, haver√° o acr√©scimo de 70% do valor de sua loca√ß√£o √†
+receita di√°ria.
+A op√ß√£o atualizar dia deve reiniciar os dados para pista, colocando-a como n√£o locada,
+bem como emitir um aviso de quais karts dever√£o ser cobrados novo aluguel, esses
 dados devem aparecer na tela.
-A ˙ltima opÁ„o deve encerrar o programa.*/
+A √∫ltima op√ß√£o deve encerrar o programa.*/
 
 programa
 {
-    funcao menu1(inteiro x){  
+	funcao menu1(inteiro x){  
     //criar vairavel para somar quantidade de vezes locado e se esta ou nao locado 
     //max 15 karts
       
-    }
-    funcao consultaKart(inteiro a, real b){
-        escreva("Voce selecionou o kart:", a "\n")
-        escreva("O valor de locaÁ„o do kart È: ", b"\n")"
-      }
-      funcao consultalocacao(inteiro c){
+     }
+     funcao consultaKart(inteiro a, inteiro b)
+     {
+     escreva("Voce selecionou o kart:", a,"\n")
+     escreva("O valor de loca√ß√£o do kart √©: ", b,"\n")
+     }
+     funcao consultalocacao(inteiro c)
+     {
         
-      }
-
-
-
-      funcao inicio() 
-      {
+     }
+	funcao inicio() 
+     {
       inteiro menu, numeroinv, kart, menuInicial = 0
-      real valorloc = 0.0
-      //vetor [15]
+      inteiro armazena[4][15]
+      inteiro i = 0, j = -1
+      inteiro valorloc = 0
+     
 
-    escreva("Bem vindo a Arasaka LocaÁıes de Karts e circuitos\n") 
+    	escreva("Bem vindo a Akaraka Locacoes de Karts e circuitos\n") 
       
-    enquanto (menuInicial == 0)
-    {
-      
-    escreva("Digite um numero correspondente ao menu para prosseguirmos\n")
-    escreva("\n1.Cadastramento de Karts \n 2.Lista de Karts disponiveis \n 3.Karts locados \n 4.Alugue seu Kart \n 5.DevoluÁ„o de Karts \n 6.Kart mais lucrativo \n 7.Lucro diario \n 8.Locar Circuito \n 9.Atualizar data \n 10. Finalizar o Programa \n")
-    leia(menu)
+		enquanto (menuInicial == 0)
+		{
+    
+   		escreva("\nDigite um numero correspondente ao menu para prosseguirmos\n")
+    		escreva("\n1.Cadastramento de Karts \n 2.Lista de Karts disponiveis \n 3.Karts locados \n 4.Alugue seu Kart \n 5.Devolu√ß√£o de Karts \n 6.Kart mais lucrativo \n 7.Lucro diario \n 8.Locar Circuito \n 9.Atualizar data \n 10. Finalizar o Programa \n")
+   		leia(menu)
 
-      se(menu == 1)
-        {
-        escreva("Digite o numero do Kart que deseja cadastrar: \n")
-        leia(kart)
-        escreva("Qual valor de locaÁ„o? \n")
-        leia(valorloc)
-
-        }
-            se(menu == 2)
-            {
-            escreva("Selecione o numero do Kart que deseja consultar \n")
-            leia(kart)
-            consultaKart(kart, valorloc)
-            }  
+			se(menu == 1)
+       		{
+       		j++	
+        		escreva("Digite o numero do Kart que deseja cadastrar: \n") //para (i=0; i < 4; i ++){    //para(j=0; j < 4; j++)
+        		leia(kart)
+        		escreva("Qual valor de loca√ß√£o? \n")
+        		leia(valorloc)
+        		
+			armazena[0][j] = kart
+			armazena[1][j] = valorloc
+			
+			}
+        		se(menu == 2)
+        		{
+        		escreva("Selecione o numero do Kart que deseja consultar \n")
+         		leia(kart)
+        	    	consultaKart(kart, valorloc)
+           	}  
                 se(menu == 3)
                 {
-                consultalocacao()
+                //consultalocacao()
                 }
                     se(menu == 4)
                     {
@@ -123,3 +128,15 @@ programa
     }                                          
   }
 }
+
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta se√ß√£o do arquivo guarda informa√ß√µes do Portugol Studio.
+ * Voc√™ pode apag√°-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 3242; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = {armazena, 56, 14, 8}-{j, 57, 21, 1};
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
