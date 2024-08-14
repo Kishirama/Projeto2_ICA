@@ -50,11 +50,16 @@ programa
      {
         
      }
+     funcao consultaVet(inteiro v, inteiro r){
+		escreva("\nSegue os detalhes do Kart escolhido")
+		escreva("\nO numero do kart é", v)
+		escreva("\nO valor de locacao é:", r )
+     }	
 	funcao inicio() 
      {
       inteiro menu, numeroinv, kart, menuInicial = 0
       inteiro armazena[4][15]
-      inteiro i = 0, j = -1
+      inteiro i = 0, j = -1,consulta
       inteiro valorloc = 0
      
 
@@ -72,18 +77,21 @@ programa
        		j++	
         		escreva("Digite o numero do Kart que deseja cadastrar: \n") //para (i=0; i < 4; i ++){    //para(j=0; j < 4; j++)
         		leia(kart)
+        		armazena[0][j] = kart
         		escreva("Qual valor de locação? \n")
         		leia(valorloc)
-        		
-			armazena[0][j] = kart
-			armazena[1][j] = valorloc
+        	     armazena[1][j] = valorloc
+
+        	     //armazena[2][j] = 0
 			
 			}
         		se(menu == 2)
         		{
         		escreva("Selecione o numero do Kart que deseja consultar \n")
          		leia(kart)
-        	    	consultaKart(kart, valorloc)
+         		consulta = armazena[1][kart]
+         		consultaVet(kart, consulta)
+        	    	
            	}  
                 se(menu == 3)
                 {
@@ -134,9 +142,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3242; 
+ * @POSICAO-CURSOR = 3711; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {armazena, 56, 14, 8}-{j, 57, 21, 1};
+ * @SIMBOLOS-INSPECIONADOS = {consulta, 62, 28, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
